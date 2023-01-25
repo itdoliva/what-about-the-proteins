@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F8F4EE;
+  font-family: 'Merriweather Sans', sans-serif;
+
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+}
+
+svg {
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/*  ------ Axes ------ */
+
+.axes-g .y-axis .domain {
+  stroke: none;
+}
+
+.axes-g .y-axis .tick text {
+  font-weight: 600;
+  fill: #888;
+  fill-opacity: 0;
+}
+
+.axes-g .grid-line {
+  stroke-width: 1px;
+  stroke: #EDE9E4;
+}
+
+.axes-g .grid-line.zero {
+  stroke: #5C694C;
+}
+
+.axes-g .x-axis .group-label-g text {
+  font-size: 11px;
+  font-weight: 600;
+  text-anchor: middle;
+  text-transform: uppercase;
+  transform: translate(0, 16px);
+  fill: #5C694C;
+}
+
+.axes-g .x-axis .group-label-g line {
+  stroke: #CCC;
+  stroke-width: 1;
+}
+
+/*  ------ Labels ------ */
+
+.label-g {
+  transform: translate(5px, -12px);
+}
+
+.label-g text {
+  transform: rotate(-90deg);
+}
+
+.label-g :is(.leaf-name, .leaf-data) {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .05rem;
+}
+
+.label-g .leaf-name {
+  fill: #666;
+}
+
+.label-g .leaf-subname {
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0;
+  fill: #555;
+
+}
+
+.label-g .leaf-data {
+  fill: #444;
+}
+
+
+/*  ------ Leaves ------ */
+
+.carb-leaf {
+  fill: #375A0C;
+  fill-opacity: .05;
+  stroke: rgba(92, 105, 76, 1);
+  stroke-width: 1.75px;
+}
+
+.lipid-leaf {
+  fill-opacity: .85;
+}
+
+
+/*  ------ Stems ------ */
+
+.stems-g path {
+  fill: none;
+  stroke-width: 1.75px;
+  stroke: url(#stem-gradient);
+}

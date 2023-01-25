@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <title>Mas e as proteínas?</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.0/d3.min.js" type="text/JavaScript"></script>
+    <script src="./static/js/formatData.js"></script>
+    <script src="./static/js/Leaf.js"></script>
+    <script src="./static/js/initCSV.js"></script>
+    <script src="./static/js/LeavesChart.js"></script>
+
+
+  </head>
+  <body>
+
+    <svg>
+      <defs>
+        <linearGradient id="stem-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stop-color="rgba(92, 105, 76, .3)"/>
+          <stop offset="70%" stop-color="rgba(92, 105, 76, .7)"/>
+          <stop offset="70%" stop-color="rgba(92, 105, 76, .7)"/>
+          <stop offset="100%" stop-color="rgba(92, 105, 76, 1)"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <script>
+
+      (async function () {
+        let raw = await d3.csv("./static/data/min_data_pivot.csv", initCSV);
+
+        const chart = new LeavesChart(raw);
+        chart.draw();
+
+        window.chart = chart;
+
+      })();
+
+      
+      
+    </script>
+      
+  </body>
+</html>
